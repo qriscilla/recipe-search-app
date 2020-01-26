@@ -22,6 +22,18 @@ class App extends Component {
     console.log(this.state.recipes);
   }
 
+  componentDidMount = () => {
+    const json = localStorage.getItem('recipes');
+    const recipes = JSON.parse(json);
+    this.setState({recipes}); // same as this.setState({recipes: recipes});
+  }
+
+  // As soon as a component updates (e.g., when the state changes), whatever's inside this ComponentDidUpdate will run.
+  componentDidUpdate = () => {
+    const recipes = JSON.stringify(this.state.recipes);
+    localStorage.setItem('recipes', recipes); // Assign to local storage
+  }
+
   render() {
     return (
       <div className='App'>
