@@ -1,3 +1,5 @@
+# Hamza Mirza's React Tutorial: Recipe Search App
+
 A tutorial I followed to familiarize myself with React.js
 
 Resources:
